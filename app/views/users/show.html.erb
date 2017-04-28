@@ -1,4 +1,9 @@
-user profile page
+<% if user_signed_in? %>
+  <%= link_to '<i class="glyphicon glyphicon-off"></i> Log Off'.html_safe,  destroy_user_session_path, method: :delete %>
+<% end %>
+
+
+<h1><%= @user.email %> profile page</h1>
 
 
 <% @expenses.each do |expense| %>
