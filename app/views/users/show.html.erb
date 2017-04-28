@@ -2,12 +2,38 @@
   <%= link_to '<i class="glyphicon glyphicon-off"></i> Log Off'.html_safe,  destroy_user_session_path, method: :delete %>
 <% end %>
 
+<% if current_user.admin? %>
+  <p><strong>All</strong> Expenses</p>
 
-<p><strong><%= @user.email %></strong> profile page</p>
+<table>
+  <th>Description:</th>
+  <th>Amount:</th>
+  <th>Transaction Date & Time:</th>
+  <% @all_expenses.each do |expense| %>
 
-
-<% @expenses.each do |expense| %>
-  <p><%= expense.description %></p>
-  <p>$ <%= '%.2f' % expense.amount.to_s %></p>
-  <p><%= expense.date_time %></p>
+  <tr>
+    <td><%= expense.description %></td>
+    <td>$ <%= '%.2f' % expense.amount %></td>
+    <td><%= expense.date_time %></td>
+  </tr>
+  <% end %>
+</table>
 <% end %>
+
+<p><strong><%= @user.email %>'s</strong> Expenses</p>
+<a href="#">add an expense</a>
+<table>
+  <th>Description:</th>
+  <th>Amount:</th>
+  <th>Transaction Date & Time:</th>
+  <% @user_expenses.each do |expense| %>
+
+  <tr>
+    <td><%= expense.description %></td>
+    <td>$ <%= '%.2f' % expense.amount %></td>
+    <td><%= expense.date_time %></td>
+    <td><a href="#">edit</a></td>
+    <td><a href="#">delete</a></td>
+  </tr>
+  <% end %>
+</table>
