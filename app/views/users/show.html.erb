@@ -3,11 +3,11 @@
 <% end %>
 
 
-<h1><%= @user.email %> profile page</h1>
+<p><strong><%= @user.email %></strong> profile page</p>
 
 
 <% @expenses.each do |expense| %>
   <p><%= expense.description %></p>
-  <p><%= expense.amount %></p>
+  <p>$ <%= '%.2f' % expense.amount.to_s %></p>
   <p><%= expense.date_time %></p>
 <% end %>
