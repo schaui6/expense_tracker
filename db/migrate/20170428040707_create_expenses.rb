@@ -4,6 +4,7 @@ class CreateExpenses < ActiveRecord::Migration[5.0]
       t.text :description
       t.string :date_time
       t.decimal :amount, precision: 8, scale: 2
+      t.integer :user_id
 
       t.timestamps
     end

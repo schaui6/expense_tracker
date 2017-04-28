@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170428040707) do
     t.text     "description"
     t.string   "date_time"
     t.decimal  "amount",      precision: 8, scale: 2
+    t.integer  "user_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
