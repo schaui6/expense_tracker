@@ -1,1 +1,8 @@
 user profile page
+
+
+<% @expenses.each do |expense| %>
+  <p><%= expense.description %></p>
+  <p><%= expense.amount %></p>
+  <p><%= expense.date_time %></p>
+<% end %>
