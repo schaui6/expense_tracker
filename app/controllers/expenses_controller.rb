@@ -1,20 +1,18 @@
 class ExpensesController < ApplicationController
   def new
-    @expense = Expense.new(expense_params)
   end
 
   def create
-    @expense = Expense.new(expense_params)
-    if @expense.save
-      flash[:success] = "Expense successfully created"
+    expense = Expense.new(user_id: params[:user_id], description: params[:expense][:description], amount: params[:expense][:amount], date_time: params[:expense][:date_time])
+    if expense.save
       redirect_to user_path(params[:user_id])
     else
-      flash[:error] = "Expense was not created"
       redirect_to user_path(params[:user_id])
     end
   end
 
   def edit
+    @user = User.find_by(id: params[:user_id])
   end
 
   def update
@@ -33,16 +31,15 @@ class ExpensesController < ApplicationController
     @expense = Expense.find_by(id: params[:id])
     @user = User.find_by(id: params[:user_id])
     if @expense.destroy
-      flash[:success] = "Expense successfully deleted!"
-      redirect_to user_path
+      redirect_to user_path(@user)
     end
   end
 
 
   private
 
-  def expense_params
-    params.require(:expense).permit(:amount, :time_date, :description, :user_id)
-  end
+  # def expense_params
+  #   params.require(:expense).permit(:amount, :date_time, :description, :user_id)
+  # end
 
 end

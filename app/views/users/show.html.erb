@@ -21,7 +21,15 @@
 <% end %>
 
 <p><strong><%= @user.email %>'s</strong> Expenses</p>
-<a href="#">add an expense</a>
+<%= form_for [@user, @new_expense] do |f| %>
+  <%= f.text_field :description, required: true, placeholder: 'description' %>
+  <%= f.text_field :amount, required: true, placeholder: 'amount' %>
+  <%= f.text_field :date_time, required: true, placeholder: 'date & time' %>
+
+  <%= f.submit "add an expense" %>
+
+<% end %>
+
 <table>
   <th>Description:</th>
   <th>Amount:</th>
@@ -32,7 +40,7 @@
     <td><%= expense.description %></td>
     <td>$ <%= '%.2f' % expense.amount %></td>
     <td><%= expense.date_time %></td>
-    <td><a href="#">edit</a></td>
+    <td><%= link_to "edit", edit_user_expense_path(@user, expense) %></td>
     <td><%= link_to 'delete', user_expense_path(@user, expense),
             data: {:confirm => 'Are you sure?'}, :method => :delete %></td>
   </tr>
