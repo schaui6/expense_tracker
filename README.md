@@ -1,5 +1,5 @@
 # Expense Tracker
-* Heroku url: 
+* Heroku url: [Expense Tracker](https://shielded-coast-21730.herokuapp.com/)
 
 For the best experience please use the following:
 * Ruby version 2.2.2
