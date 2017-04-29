@@ -20,6 +20,6 @@ In terminal/ command prompt:
 
 ## View App in Development
 * Start the server with `rails server` in terminal/ command prompt
-* Navigate to [https://localhost:3000](https://localhost:3000) in your browser
+* Navigate to [http://localhost:3000](http://localhost:3000) in your browser
 
 
