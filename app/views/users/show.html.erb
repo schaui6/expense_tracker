@@ -1,15 +1,15 @@
 <% if current_user.admin? %>
-  <p><strong>ALL</strong> Expenses</p>
+  <p class="heading"><strong>ALL</strong> Expenses</p>
   <%= render 'all_user_expenses_admin' %>
 <% end %>
 
-<p><strong><%= @user.email %>'s</strong> Expenses</p>
+<p class="heading"><strong><%= @user.email %>'s</strong> Expenses</p>
 
 <%= render 'current_user_expenses' %>
 <%= render 'add_expense_form' %>
 
 
-<p><strong><%= @user.email %>'s</strong> Reports</p>
+<p class="heading"><strong><%= @user.email %>'s</strong> Reports</p>
 
 <%= render 'current_user_reports' %>
 <%= render 'generate_report_form' %>
