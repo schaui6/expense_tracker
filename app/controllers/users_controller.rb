@@ -6,7 +6,13 @@ class UsersController < ApplicationController
     else
       @user_expenses = @user.expenses
       @all_expenses = Expense.all
+      p '*'*100
+      # p @user_expenses.reports 
+      # @transactions = @all_expenses.where(date: report.start_date..report.end_date)
       @new_expense = Expense.new
+      @new_report = Report.new
+      @all_user_reports = @user.reports
+
     end
   end
 

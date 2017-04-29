@@ -18,15 +18,8 @@
 //= require turbolinks
 //= require_tree .
 $(document).ready(function() {
-  // $('table').on('click','td', insertForm);
-    // Activating Best In Place 
   $(".best_in_place").best_in_place();
 });
 
-// var insertForm = function(evt){
-//   evt.preventDefault();
-//   console.log(this);
-
-// };
 
 
