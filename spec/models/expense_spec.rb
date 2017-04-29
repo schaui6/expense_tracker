@@ -61,7 +61,7 @@ RSpec.describe Expense, type: :model do
     expect(expense.user_id).to be_a_kind_of(Integer)
   end
 
-  it "returns an expense's amount as a decimal" do
+  it "returns an expense's amount as a big decimal" do
     expect(expense.amount).to be_a_kind_of(BigDecimal)
   end
 
@@ -70,6 +70,6 @@ RSpec.describe Expense, type: :model do
   end
 
   it "returns an expense's date as a date" do
-    expect(expense.time).to be_a_kind_of(Time)
+    expect(expense.date).to be_a_kind_of(Date)
   end
 end
