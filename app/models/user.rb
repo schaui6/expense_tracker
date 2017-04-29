@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :expenses
   has_many :reports
+  validates :email, :encrypted_password, presence: true
 end
