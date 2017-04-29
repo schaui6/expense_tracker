@@ -55,16 +55,13 @@
 <p><strong><%= @user.email %>'s</strong> Reports</p>
 
 <table>
-  <!-- <th># of Transaction:</th> -->
   <th>Start Date:</th>
   <th>End Date:</th>
-  <th>Total Cost/Week:</th>
+  <th>Total Cost</th>
 
 <% @all_user_reports.each do |report| %>
-  <!-- < % report.transactions = @all_expenses.where(date: report.start_date..report.end_date) %> -->
 
   <tr>
-    <!-- <td><%= @all_expenses.where(date: report.start_date..report.end_date).length %></td> -->
     <td><%= report.start_date %></td>
     <td><%= report.end_date %></td>
     <td>$<%= report.total %></td>
