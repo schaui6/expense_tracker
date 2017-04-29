@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'factory_girl_rails'
 
 feature 'User login' do
 
@@ -12,19 +11,26 @@ feature 'User login' do
   end
 
   scenario 'user logs into site' do
-    visit root_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Log in'
+    login_user
     page.should have_content 'Log Off'
   end
 
   scenario 'admin can read all user expenses' do
+    login_admin
+    page.should have_content 'ALL Expenses'
+  end
+
+  def login_user
+    visit root_path
+    fill_in 'Email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Log in'
+  end
+
+  def login_admin
     visit root_path
     fill_in 'Email', with: admin.email
     fill_in 'Password', with: admin.password
     click_button 'Log in'
-    page.should have_content 'ALL Expenses'
   end
-
 end
