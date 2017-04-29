@@ -54,7 +54,7 @@ group :development do
   gem 'webmock'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'capybara'
+  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
