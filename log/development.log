@@ -9562,3 +9562,7 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 50ms (Views: 42.1ms | ActiveRecord: 2.6ms)
 
 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "admin" = $2 WHERE "users"."id" = $3[0m  [["updated_at", 2017-04-29 17:17:32 UTC], ["admin", true], ["id", 2]]
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m

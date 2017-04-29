@@ -1,0 +1,9 @@
+<%= form_for [@user, @new_expense] do |f| %>
+  <%= f.text_field :description, required: true, placeholder: 'description' %>
+  <%= f.text_field :amount, required: true, placeholder: 'amount' %>
+  <%= date_field :expense, :date %>
+  <%= time_field :expense, :time %>
+
+  <%= f.submit "add an expense" %>
+
+<% end %>

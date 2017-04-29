@@ -1,0 +1,7 @@
+<%= form_for [@user, @new_report] do |f| %>
+  start date: <%= date_field :start_date, :date %>
+  end date: <%= date_field :end_date, :date %>
+
+  <%= f.submit "generate a report" %>
+
+<% end %>
