@@ -18,11 +18,17 @@ class ExpensesController < ApplicationController
   def update
     @expense = Expense.find_by(id: params[:id])
     @user = User.find_by(id: params[:user_id])
-    if @expense.update(user_id: params[:user_id], description: params[:expense][:description], amount: params[:expense][:amount], date_time: params[:expense][:date_time])
-      redirect_to user_path(@user)
-    else
-      redirect_to edit_user_expense_path(@user, @expense)
+
+    props = ['description','date_time', 'amount']
+    key = params[:expense].keys.first
+
+    props.each do |ans|
+      if ans == key
+        p @expense[ans] = params[:expense][ans]
+        p @expense.save
+      end
     end
+    redirect_to user_path(@user)
   end
 
   def destroy
