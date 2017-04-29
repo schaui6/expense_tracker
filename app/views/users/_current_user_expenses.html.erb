@@ -1,0 +1,18 @@
+<table>
+  <th>Description:</th>
+  <th>Amount:</th>
+  <th>Date</th>
+  <% @user.expenses.each do |expense| %>
+
+  <tr>
+    <td><%= best_in_place [@user, expense], :description %></td>
+    <td>$ <%= best_in_place [@user, expense],:amount %></td>
+    <td><%= best_in_place [@user, expense], :date %></td>
+    <td><%= link_to 'delete', user_expense_path(@user, expense),
+            data: {:confirm => 'Are you sure?'}, :method => :delete %></td>
+  </tr>
+  <% end %>
+  <tr>
+    <td>* To edit: select desired field </td>
+  </tr>
+</table>

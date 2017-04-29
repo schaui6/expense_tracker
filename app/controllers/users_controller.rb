@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     if @user.blank? || current_user.id != @user.id
       redirect_to current_user
     else
+      @all_expenses = Expense.all
       @new_expense = Expense.new
       @new_report = Report.new
     end
