@@ -3,7 +3,7 @@ class ExpensesController < ApplicationController
   end
 
   def create
-    expense = Expense.new(user_id: params[:user_id], description: params[:expense][:description], amount: params[:expense][:amount], date_time: params[:expense][:date_time])
+    expense = Expense.new(user_id: params[:user_id], description: params[:expense][:description], amount: params[:expense][:amount], date: params[:expense][:date], time: params[:expense][:time])
     if expense.save
       redirect_to user_path(params[:user_id])
     else
@@ -19,13 +19,13 @@ class ExpensesController < ApplicationController
     @expense = Expense.find_by(id: params[:id])
     @user = User.find_by(id: params[:user_id])
 
-    props = ['description','date_time', 'amount']
+    props = ['description','date', 'amount', 'time']
     key = params[:expense].keys.first
 
     props.each do |ans|
       if ans == key
-        p @expense[ans] = params[:expense][ans]
-        p @expense.save
+        @expense[ans] = params[:expense][ans]
+        @expense.save
       end
     end
     redirect_to user_path(@user)

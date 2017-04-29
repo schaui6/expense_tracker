@@ -7865,3 +7865,1074 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 35ms (Views: 29.7ms | ActiveRecord: 1.2ms)
 
 
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "expenses"[0m
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "expenses"[0m
+  [1m[36mExpense Load (11.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE (amount > 1)[0m
+  [1m[36mExpense Load (14.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE (amount > 1 and amount < 5)[0m
+Started GET "/users/2" for ::1 at 2017-04-28 21:41:00 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses"[0m
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 93ms (Views: 60.4ms | ActiveRecord: 1.3ms)
+
+
+Started PUT "/users/2/expenses/9" for ::1 at 2017-04-28 21:41:05 -0700
+Processing by ExpensesController#update as JSON
+  Parameters: {"expense"=>{"description"=>"lunch with client1"}, "authenticity_token"=>"9xSD53Iickv8HleCBwSwyzFOt+pZ29OzZHj5TpUyLJixmADkZTO6glZbQhP84cFykq/zVZooav5spQw2RTr/gw==", "user_id"=>"2", "id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "expenses" SET "description" = $1, "updated_at" = $2 WHERE "expenses"."id" = $3[0m  [["description", "lunch with client1"], ["updated_at", 2017-04-29 04:41:05 UTC], ["id", 9]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/2
+Completed 200 OK in 36ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/users/2" for ::1 at 2017-04-28 21:41:06 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses"[0m
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 43ms (Views: 36.3ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/users/2/expenses/9" for ::1 at 2017-04-28 21:41:11 -0700
+Processing by ExpensesController#update as JSON
+  Parameters: {"expense"=>{"description"=>"lunch with client"}, "authenticity_token"=>"pXdc91XCr9WvACYZ5nbTLK7fC1m6w8+yAF37muuQRWPj+9/0QtNnHAVFM4gdk6KVDT5P5nkwdv8IgA7iO5iWeA==", "user_id"=>"2", "id"=>"9"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "expenses" SET "description" = $1, "updated_at" = $2 WHERE "expenses"."id" = $3[0m  [["description", "lunch with client"], ["updated_at", 2017-04-29 04:41:11 UTC], ["id", 9]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/2
+Completed 200 OK in 17ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/users/2" for ::1 at 2017-04-28 21:41:12 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses"[0m
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 41ms (Views: 33.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/2" for ::1 at 2017-04-28 21:44:50 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.6ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses"[0m
+  Rendered users/show.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (1 for 2..3)):
+    25:   <%= f.text_field :description, required: true, placeholder: 'description' %>
+    26:   <%= f.text_field :amount, required: true, placeholder: 'amount' %>
+    27:   <%= f.text_field :date_time, required: true, placeholder: 'date & time' %>
+    28:   <%= date_field :date_time %>
+    29: 
+    30:   <%= f.submit "add an expense" %>
+    31: 
+  
+app/views/users/show.html.erb:28:in `block in _app_views_users_show_html_erb__2923567850010017367_70257092944520'
+app/views/users/show.html.erb:24:in `_app_views_users_show_html_erb__2923567850010017367_70257092944520'
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.2ms)
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (100.1ms)
+Started GET "/users/2" for ::1 at 2017-04-28 21:45:35 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/Users/sanderferchau/Desktop/expense_tracker/app/views/users/show.html.erb:28: syntax error, unexpected ')', expecting keyword_end
+...e_field :expense, :date_time) );@output_buffer.safe_append='
+...                               ^):
+  
+app/views/users/show.html.erb:28: syntax error, unexpected ')', expecting keyword_end
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.2ms)
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (89.2ms)
+Started GET "/users/2" for ::1 at 2017-04-28 21:45:55 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses"[0m
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 72ms (Views: 66.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/2" for ::1 at 2017-04-28 21:48:45 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses"[0m
+  Rendered users/show.html.erb within layouts/application (67.7ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `datetime' for #<Expense:0x007fcc024d6d38>):
+    26:   <%= f.text_field :amount, required: true, placeholder: 'amount' %>
+    27:   <%= f.text_field :date_time, required: true, placeholder: 'date & time' %>
+    28:   <%= date_field :expense, :date_time %>
+    29:   <%= f.datetime_select :datetime, :ampm => true, :minute_step => 15 %>
+    30: 
+    31:   <%= f.submit "add an expense" %>
+    32: 
+  
+app/views/users/show.html.erb:29:in `block in _app_views_users_show_html_erb__2923567850010017367_70257094336780'
+app/views/users/show.html.erb:24:in `_app_views_users_show_html_erb__2923567850010017367_70257094336780'
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.2ms)
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (96.6ms)
+Started GET "/users/2" for ::1 at 2017-04-28 21:48:54 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses"[0m
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 84ms (Views: 54.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/2" for ::1 at 2017-04-28 21:53:23 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses"[0m
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 68ms (Views: 60.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/2" for ::1 at 2017-04-28 21:56:36 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses"[0m
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 64ms (Views: 56.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/2" for ::1 at 2017-04-28 21:56:48 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses"[0m
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered users/show.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 46ms (Views: 40.8ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (7.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (6703.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "db/development"[0m
+  [1m[35m (311.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "db/test"[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8115692404137957555);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20170428023756)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170428023756"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdminToUsers (20170428031949)
+  [1m[35m (5.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (22.8ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170428031949"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateExpenses (20170428040707)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.3ms)[0m  [1m[35mCREATE TABLE "expenses" ("id" serial primary key, "description" text, "date_time" timestamp, "amount" decimal(8,2), "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170428040707"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-29 04:59:56 UTC], ["updated_at", 2017-04-29 04:59:56 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8115692404137957555)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-04-28 22:00:21 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#current_user_home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 401 Unauthorized in 43ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-04-28 22:00:21 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 460ms (Views: 444.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-04-28 22:00:28 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ip2yeIJ6dcbmZc5E0Ys+St3FJl3Z3ofEZAgGBP7hwhXMETF7lWu9D0wg29Uqbk/zfiRi4hotPols1fN8LukRDg==", "user"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.8ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ip2yeIJ6dcbmZc5E0Ys+St3FJl3Z3ofEZAgGBP7hwhXMETF7lWu9D0wg29Uqbk/zfiRi4hotPols1fN8LukRDg==", "user"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 208ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-04-28 22:00:32 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (10.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (44.9ms)
+Completed 200 OK in 157ms (Views: 154.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-04-28 22:00:45 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"grfQj8AQdD+IlDPacaiiF9vpWCZfxO8uvcYV4vhPt0rEO1OM1wG89iLRJkuKTdOueAgcmZw3VmO1G+CaKEdkUQ==", "user"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (7.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user@gmail.com"], ["encrypted_password", "$2a$11$1tzrxs6QthT.74atIaalRuuStlg.LVXcPEBowk8xvIDiYBhf/j3e."], ["created_at", 2017-04-29 05:00:45 UTC], ["updated_at", 2017-04-29 05:00:45 UTC]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", 2017-04-29 05:00:45 UTC], ["last_sign_in_at", 2017-04-29 05:00:45 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["updated_at", 2017-04-29 05:00:45 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 211ms (ActiveRecord: 15.4ms)
+
+
+Started GET "/" for ::1 at 2017-04-28 22:00:45 -0700
+Processing by UsersController#current_user_home as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:00:45 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (2.1ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 116ms (Views: 44.3ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/users/1/expenses" for ::1 at 2017-04-28 22:01:00 -0700
+Processing by ExpensesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4T90WXVwmH17LgT+HuazGr+2Vd0yeb2kI8Qw18RRBjCns/daYmFQtNFrEW/lA8KjHFcRYvGKBOkrGcWvFFnVKw==", "expense"=>{"description"=>"lunch with client", "amount"=>"30.00"}, "date"=>{"year"=>"2017", "month"=>"4", "day"=>"29", "hour"=>"08", "minute"=>"00"}, "commit"=>"add an expense", "user_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "expenses" ("description", "amount", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "lunch with client"], ["amount", #<BigDecimal:7fc1ff4be420,'0.3E2',9(18)>], ["user_id", 1], ["created_at", 2017-04-29 05:01:00 UTC], ["updated_at", 2017-04-29 05:01:00 UTC]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 21ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:01:00 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 49ms (Views: 43.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:01:48 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 110ms (Views: 73.4ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/users/1/expenses" for ::1 at 2017-04-28 22:01:58 -0700
+Processing by ExpensesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m6t7lMkAhy5/qzn+fyEJHfQ9FsF3rpWh2j19TKpcHO7dJ/iX3hFP59XuLG+ExHikV9xSfrRdLOzS4Ig0elTP9Q==", "expense"=>{"description"=>"work supplies", "amount"=>"521.22"}, "date"=>{"year"=>"2017", "month"=>"4", "day"=>"29", "hour"=>"05", "minute"=>"01"}, "commit"=>"add an expense", "user_id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "expenses" ("description", "amount", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "work supplies"], ["amount", #<BigDecimal:7fc2011ee5e0,'0.52122E3',18(27)>], ["user_id", 1], ["created_at", 2017-04-29 05:01:58 UTC], ["updated_at", 2017-04-29 05:01:58 UTC]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 17ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:01:58 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 65ms (Views: 58.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:06:13 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 52ms (Views: 45.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:08:11 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 61ms (Views: 50.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:10:58 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (38.2ms)
+Completed 200 OK in 400ms (Views: 314.3ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:11:50 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (16.4ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `date' for #<Expense:0x007fe9ca68ec30>):
+    43:   <tr>
+    44:     <td><%= best_in_place [@user, expense], :description %></td>
+    45:     <td>$ <%= best_in_place [@user, expense],:amount %></td>
+    46:     <td><%= best_in_place [@user, expense], :date, :as => :date %></td>
+    47:   
+    48: 
+    49:     <td><%= link_to 'delete', user_expense_path(@user, expense),
+  
+app/views/users/show.html.erb:46:in `block in _app_views_users_show_html_erb__4232150851528783078_70321050043140'
+app/views/users/show.html.erb:41:in `_app_views_users_show_html_erb__4232150851528783078_70321050043140'
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.9ms)
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (99.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (203.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "db/development"[0m
+  [1m[35m (200.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "db/test"[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8115692404137957555);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to DeviseCreateUsers (20170428023756)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170428023756"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdminToUsers (20170428031949)
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (22.7ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170428031949"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateExpenses (20170428040707)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.6ms)[0m  [1m[35mCREATE TABLE "expenses" ("id" serial primary key, "description" text, "date" date, "time" time, "amount" decimal(8,2), "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170428040707"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-29 05:12:23 UTC], ["updated_at", 2017-04-29 05:12:23 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8115692404137957555)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for ::1 at 2017-04-28 22:12:56 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#current_user_home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 46ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-04-28 22:12:56 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 301ms (Views: 287.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:13:01 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-04-28 22:13:01 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-04-28 22:13:05 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (5.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 128ms (Views: 126.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-04-28 22:13:16 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m1rxHGhZAz+RahEspkiRUNmdEKEQRd7PzRPV91tclLXd1nIff0jL9jsvBL1dreDpenxUHtO2Z4LFziCPi1RHrg==", "user"=>{"email"=>"user@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "user@gmail.com"], ["encrypted_password", "$2a$11$2AFXdgyLqncS1oaMyCUNvOfIpj88TBRpP5eU.T5IMJUxmDmZYpr3q"], ["created_at", 2017-04-29 05:13:17 UTC], ["updated_at", 2017-04-29 05:13:17 UTC]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = $1, "current_sign_in_at" = $2, "last_sign_in_at" = $3, "current_sign_in_ip" = $4, "last_sign_in_ip" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["sign_in_count", 1], ["current_sign_in_at", 2017-04-29 05:13:17 UTC], ["last_sign_in_at", 2017-04-29 05:13:17 UTC], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["updated_at", 2017-04-29 05:13:17 UTC], ["id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 223ms (ActiveRecord: 14.8ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:13:17 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from show at /Users/sanderferchau/Desktop/expense_tracker/app/controllers/users_controller.rb:7)
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (2.1ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 113ms (Views: 44.6ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/users/1/expenses" for ::1 at 2017-04-28 22:13:35 -0700
+Processing by ExpensesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fTnjYxth9M36i+sKApTTVArHzX4OKlf1SVgwyYjr3EI7tWBgDHA8BFDO/pv5caLtqSaJwc3Z7rhBhcWxWOMPWQ==", "expense"=>{"description"=>"lunch with client", "amount"=>"11.11", "date"=>"2017-04-14", "time"=>"02:59"}, "commit"=>"add an expense", "user_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (13.2ms)[0m  [1m[32mINSERT INTO "expenses" ("description", "date", "time", "amount", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["description", "lunch with client"], ["date", Fri, 14 Apr 2017], ["time", 2000-01-01 02:59:00 UTC], ["amount", #<BigDecimal:7f8fcc2d4570,'0.1111E2',18(27)>], ["user_id", 1], ["created_at", 2017-04-29 05:13:35 UTC], ["updated_at", 2017-04-29 05:13:35 UTC]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 38ms (ActiveRecord: 20.3ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:13:35 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 44ms (Views: 37.4ms | ActiveRecord: 1.1ms)
+
+
+Started PUT "/users/1/expenses/1" for ::1 at 2017-04-28 22:14:27 -0700
+Processing by ExpensesController#update as JSON
+  Parameters: {"expense"=>{"date"=>"2017-04-15"}, "authenticity_token"=>"NHKPWEBv3kPwLTLZSY/PU5XBQgtthLUO556E40NCF+dy/gxbV34WilpoJ0iyar7qNiAGtK53DEPvQ3Gbk0rE/A==", "user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 200 OK in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:14:28 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 62ms (Views: 54.7ms | ActiveRecord: 1.2ms)
+
+
+Started PUT "/users/1/expenses/1" for ::1 at 2017-04-28 22:14:48 -0700
+Processing by ExpensesController#update as JSON
+  Parameters: {"expense"=>{"date"=>"2017-04-11"}, "authenticity_token"=>"tLyiqlQsaWkEYUoZy3hKcmzWA4HOOFM5mzy11TjbEQ3yMCGpQz2hoK4kX4gwnTvLzzdHPg3L6nST4UCt6NPCFg==", "user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 200 OK in 6ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:15:34 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from show at /Users/sanderferchau/Desktop/expense_tracker/app/controllers/users_controller.rb:7)
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 123ms (Views: 71.5ms | ActiveRecord: 5.9ms)
+
+
+Started PUT "/users/1/expenses/1" for ::1 at 2017-04-28 22:15:38 -0700
+Processing by ExpensesController#update as JSON
+  Parameters: {"expense"=>{"date"=>"2017-04-11"}, "authenticity_token"=>"skxRCuxd+IVtKY34BwRvG7uCnZNxV+X88kqBoDXAQxT0wNIJ+0wwTMdsmGn84R6iGGPZLLKkXLH6l3TY5ciQDw==", "user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "expenses" SET "date" = $1, "updated_at" = $2 WHERE "expenses"."id" = $3[0m  [["date", Tue, 11 Apr 2017], ["updated_at", 2017-04-29 05:15:38 UTC], ["id", 1]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 200 OK in 18ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:15:39 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 41ms (Views: 35.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:15:43 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 36ms (Views: 29.0ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/users/1/expenses/1" for ::1 at 2017-04-28 22:15:49 -0700
+Processing by ExpensesController#update as JSON
+  Parameters: {"expense"=>{"date"=>"2017-05-11"}, "authenticity_token"=>"lT7YDwI+oBJEogjTUp/3BxqT4vM/PDKxQeqCxPQ/ZpLTslsMFS9o2+7nHUKpeoa+uXKmTPzPi/xJN3e8JDe1iQ==", "user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "expenses" SET "date" = $1, "updated_at" = $2 WHERE "expenses"."id" = $3[0m  [["date", Thu, 11 May 2017], ["updated_at", 2017-04-29 05:15:49 UTC], ["id", 1]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 200 OK in 15ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:15:50 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 41ms (Views: 35.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:17:21 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 39ms (Views: 32.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:17:40 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 42ms (Views: 34.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:18:55 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 51ms (Views: 45.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:19:19 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 46ms (Views: 40.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:19:22 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 41ms (Views: 34.2ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/users/1/expenses/1" for ::1 at 2017-04-28 22:19:42 -0700
+Processing by ExpensesController#update as JSON
+  Parameters: {"expense"=>{"time"=>"2000-01-01 03:59:00 UTC"}, "authenticity_token"=>"4ZLSoddFCxrQtDVJsejzdGFSmaKM/vUROD/TCKiRAOOnHlGiwFTD03rxINhKDYLNwrPdHU8NTFww4iZweJnT+A==", "user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "expenses" SET "time" = $1, "updated_at" = $2 WHERE "expenses"."id" = $3[0m  [["time", 2000-01-01 03:59:00 UTC], ["updated_at", 2017-04-29 05:19:42 UTC], ["id", 1]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 200 OK in 16ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:19:44 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 40ms (Views: 34.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:19:47 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 39ms (Views: 33.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/1/expenses" for ::1 at 2017-04-28 22:21:59 -0700
+Processing by ExpensesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c6gc3zEHFq7Psa4/CUDVLEEBBL3xXSiPpK9f6Hr8/qQ1JJ/cJhbeZ2X0u67ypaSV4uBAAjKukcKscqqQqvQtvw==", "expense"=>{"description"=>"work supplies", "amount"=>"11.11", "date"=>"2017-04-11", "time"=>"12:01"}, "commit"=>"add an expense", "user_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "expenses" ("description", "date", "time", "amount", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["description", "work supplies"], ["date", Tue, 11 Apr 2017], ["time", 2000-01-01 12:01:00 UTC], ["amount", #<BigDecimal:7f8fd0281d58,'0.1111E2',18(27)>], ["user_id", 1], ["created_at", 2017-04-29 05:21:59 UTC], ["updated_at", 2017-04-29 05:21:59 UTC]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 17ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:21:59 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 52ms (Views: 45.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:23:06 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 58ms (Views: 52.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:23:12 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 42ms (Views: 34.9ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/users/1/expenses/1" for ::1 at 2017-04-28 22:23:17 -0700
+Processing by ExpensesController#update as JSON
+  Parameters: {"expense"=>{"date"=>"2017-05-02"}, "authenticity_token"=>"xMy58dL7UEaStnrHPRBU7SmNiPCNwCS2pvI2lFCo25KCQDryxeqYjzjzb1bG9SVUimzMT04znfuuL8PsgKAIiQ==", "user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "expenses" SET "date" = $1, "updated_at" = $2 WHERE "expenses"."id" = $3[0m  [["date", Tue, 02 May 2017], ["updated_at", 2017-04-29 05:23:17 UTC], ["id", 1]]
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 200 OK in 15ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:23:18 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 40ms (Views: 30.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:24:23 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from show at /Users/sanderferchau/Desktop/expense_tracker/app/controllers/users_controller.rb:7)
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 83ms (Views: 49.9ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/users/1/expenses" for ::1 at 2017-04-28 22:24:34 -0700
+Processing by ExpensesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e5kHIvOJRshmQWC1NIm5r9cy1PUpw3FbQsy5d6C3l1A9FYQh5JiOAcwEdSTPbMgWdNOQSuowyBZKEUwPcL9ESw==", "expense"=>{"description"=>"lunch with client", "amount"=>"521.22", "date"=>"2017-04-12", "time"=>"01:00"}, "commit"=>"add an expense", "user_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "expenses" ("description", "date", "time", "amount", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["description", "lunch with client"], ["date", Wed, 12 Apr 2017], ["time", 2000-01-01 01:00:00 UTC], ["amount", #<BigDecimal:7f8fcec6deb8,'0.52122E3',18(27)>], ["user_id", 1], ["created_at", 2017-04-29 05:24:34 UTC], ["updated_at", 2017-04-29 05:24:34 UTC]]
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 16ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:24:34 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 42ms (Views: 36.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:30:55 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (8.2ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `strftime' for :time:Symbol):
+    43:     <td><%= best_in_place [@user, expense], :description %></td>
+    44:     <td>$ <%= best_in_place [@user, expense],:amount %></td>
+    45:     <td><%= best_in_place [@user, expense], :date %></td>
+    46:     <td><%= best_in_place [@user, expense], :time.strftime("%I:%M %p") %></td>
+    47:   
+    48: 
+    49:     <td><%= link_to 'delete', user_expense_path(@user, expense),
+  
+app/views/users/show.html.erb:46:in `block in _app_views_users_show_html_erb___3680527877302638395_70127827469680'
+app/views/users/show.html.erb:40:in `_app_views_users_show_html_erb___3680527877302638395_70127827469680'
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.7ms)
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (102.8ms)
+Started GET "/users/1" for ::1 at 2017-04-28 22:31:37 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `strftime' for #<ActiveSupport::SafeBuffer:0x007f8fc77a56f8>):
+    43:     <td><%= best_in_place [@user, expense], :description %></td>
+    44:     <td>$ <%= best_in_place [@user, expense],:amount %></td>
+    45:     <td><%= best_in_place [@user, expense], :date %></td>
+    46:     <td><%= (best_in_place [@user, expense], :time).strftime("%I:%M %p") %></td>
+    47:   
+    48: 
+    49:     <td><%= link_to 'delete', user_expense_path(@user, expense),
+  
+app/views/users/show.html.erb:46:in `block in _app_views_users_show_html_erb___3680527877302638395_70127751937660'
+app/views/users/show.html.erb:40:in `_app_views_users_show_html_erb___3680527877302638395_70127751937660'
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.6ms)
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendering /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/sanderferchau/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (102.2ms)
+Started GET "/users/1" for ::1 at 2017-04-28 22:31:56 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 66ms (Views: 60.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:37:47 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 142ms (Views: 105.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:38:39 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 94ms (Views: 85.9ms | ActiveRecord: 1.1ms)
+
+
+Started PUT "/users/1/expenses/3" for ::1 at 2017-04-28 22:39:54 -0700
+Processing by ExpensesController#update as JSON
+  Parameters: {"expense"=>{"time"=>"2017-01-01 01:00:00 UTC"}, "authenticity_token"=>"5lAZ+XrC6QxWE4Se3t/JzYtSinxndeACQNi0eL3eNF+g3Jr6bdMhxfxWkQ8lOrh0KLPOw6SGWU9IBUEAbdbnRA==", "user_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.9ms)[0m  [1m[34mSELECT  "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 200 OK in 17ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:39:56 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 74ms (Views: 65.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:41:11 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: Time columns will become time zone aware in Rails 5.1. This
+still causes `String`s to be parsed as if they were in `Time.zone`,
+and `Time`s to be converted to `Time.zone`.
+
+To keep the old behavior, you must add the following to your initializer:
+
+    config.active_record.time_zone_aware_types = [:datetime]
+
+To silence this deprecation warning, add the following:
+
+    config.active_record.time_zone_aware_types = [:datetime, :time]
+ (called from show at /Users/sanderferchau/Desktop/expense_tracker/app/controllers/users_controller.rb:7)
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 136ms (Views: 57.2ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:41:28 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 40ms (Views: 32.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:41:38 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 47ms (Views: 39.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-28 22:41:55 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered users/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 41ms (Views: 35.2ms | ActiveRecord: 0.9ms)
+
+
