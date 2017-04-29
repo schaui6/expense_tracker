@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  margin: 0 auto;
+}
+
+.heading {
+  text-align: center;
+  font-size: 30px;
+}
+
+th {
+  padding: 20px;
+}
+
+tr {
+  text-align: center;
+}
+
+
+form {
+  margin: 15px auto;
+}
+
+.card {
+  padding: 25px;
+  margin: 10px 0px 250px 0px auto;
+  width: 45%;
+  border: 1px solid black;
+  min-width: 30%;
+}
