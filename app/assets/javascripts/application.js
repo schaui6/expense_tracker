@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).on('turbolinks:load', function() {
+  $('table').on('click','td', insertForm);
+});
+
+var insertForm = function(evt){
+  evt.preventDefault();
+  console.log(this);
+};
+
+

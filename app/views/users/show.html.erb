@@ -40,7 +40,8 @@
     <td><%= expense.description %></td>
     <td>$ <%= '%.2f' % expense.amount %></td>
     <td><%= expense.date_time %></td>
-    <td><%= link_to "edit", edit_user_expense_path(@user, expense) %></td>
+    <td><%= link_to "edit",  edit_user_expense_path(@user, expense), class: 'edit-exp-link' %></td>
+    
     <td><%= link_to 'delete', user_expense_path(@user, expense),
             data: {:confirm => 'Are you sure?'}, :method => :delete %></td>
   </tr>
