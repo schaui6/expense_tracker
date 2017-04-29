@@ -1,18 +1,23 @@
 <% if current_user.admin? %>
-  <p class="heading"><strong>ALL</strong> Expenses</p>
-  <%= render 'all_user_expenses_admin' %>
+  <section class="card">
+    <p class="heading"><strong>ALL</strong> Expenses</p>
+    <%= render 'all_user_expenses_admin' %>
+  </section>
 <% end %>
 
+<section class="card">
 <p class="heading"><strong><%= @user.email %>'s</strong> Expenses</p>
 
 <%= render 'current_user_expenses' %>
+<p>To edit: select desired field</p>
 <%= render 'add_expense_form' %>
+</section>
 
-
+<section class="card">
 <p class="heading"><strong><%= @user.email %>'s</strong> Reports</p>
 
 <%= render 'current_user_reports' %>
 <%= render 'generate_report_form' %>
-
+</section>
 
 

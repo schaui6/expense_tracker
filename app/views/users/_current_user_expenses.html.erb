@@ -1,7 +1,7 @@
 <table>
   <th>Description:</th>
   <th>Amount:</th>
-  <th>Date</th>
+  <th>Date:</th>
   <% @user.expenses.each do |expense| %>
 
   <tr>
@@ -12,7 +12,4 @@
             data: {:confirm => 'Are you sure?'}, :method => :delete %></td>
   </tr>
   <% end %>
-  <tr>
-    <td>* To edit: select desired field </td>
-  </tr>
 </table>
