@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'User login' do
+feature 'User login/logout' do
 
   let(:user) { User.create(email: 'user@gmail.com', password: 'password') }
   let(:admin) { User.create(email: 'admin@gmail.com', password: 'password', admin: true) }
@@ -13,6 +13,12 @@ feature 'User login' do
   scenario 'user logs into site' do
     login_user
     page.should have_content 'Log Off'
+  end
+
+  scenario 'user logs into site' do
+    login_user
+    click_link 'Log Off'
+    page.should have_content 'Log in'
   end
 
   scenario 'admin can read all user expenses' do
