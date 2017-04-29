@@ -9908,3 +9908,26 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 100ms (Views: 92.2ms | ActiveRecord: 1.9ms)
 
 
+Started DELETE "/users/sign_out" for ::1 at 2017-04-29 14:41:24 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aFXzbEH9eRiWNyYmyTHBUqoQGi08Ue2HNqqVVK//tjbSNANOZkkDZBrVlshrSIXiE/mB1gxcwpR3WYIz7YVyfQ=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2017-04-29 14:41:24 -0700
+Processing by UsersController#current_user_home as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-04-29 14:41:24 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 71ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+

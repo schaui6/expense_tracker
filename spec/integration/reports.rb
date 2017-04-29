@@ -3,7 +3,6 @@ require 'spec_helper'
 feature 'Reports' do
 
   let(:user) { User.create(email: 'user@gmail.com', password: 'password') }
-  let(:admin) { User.create(email: 'admin@gmail.com', password: 'password', admin: true) }
 
   scenario 'user can create a report' do
     login_user
