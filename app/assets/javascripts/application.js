@@ -12,5 +12,21 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require best_in_place
+
+//= require best_in_place.jquery-ui
 //= require turbolinks
 //= require_tree .
+$(document).ready(function() {
+  // $('table').on('click','td', insertForm);
+    // Activating Best In Place 
+  $(".best_in_place").best_in_place();
+});
+
+// var insertForm = function(evt){
+//   evt.preventDefault();
+//   console.log(this);
+
+// };
+
+
