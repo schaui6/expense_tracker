@@ -21,5 +21,6 @@ In terminal/ command prompt:
 ## View App in Development
 * Start the server with `rails server` in terminal/ command prompt
 * Navigate to [http://localhost:3000](http://localhost:3000) in your browser
-
+* User login: `user@gmail.com` password: `password`
+* Admin login: `admin@gmail.com` password: `password` 
 
